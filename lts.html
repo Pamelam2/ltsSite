@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<!-- Compiled and minified materialize -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chilanka|Sedgwick+Ave|Sunshiney|Tillana&display=swap" rel="stylesheet">
+<style>
+  .backsplash {
+  position: relative;
+  text-align: center;
+  color: white;
+  }
+  
+  .centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
+  
+</style>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="ltsCtrl"> 
+ 
+  <nav class="nav-extended indigo darken-4">
+	<div class="container">
+    <div class="nav-wrapper">
+      <a href="#/!" class="brand-logo" style="font-size:3vw;">Learning Technology Support</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu">Email</p></li>
+        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="479-555-5555">Phone</p></li>
+        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu">Form</p></li>
+      </ul>
+      
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab" ng-repeat="x in links"><a href="{{ x.link }}" class="{{ x.class }}" onclick="setTimeout(initParallax, 1000)">{{ x.name }}</a></li>
+      </ul>
+    </div>
+	</div>
+  </nav>
+
+<main>
+<div ng-view></div>
+</main>
+
+<footer class="page-footer indigo darken-4">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 l4">
+        <h5 class="white-text">Learning Technology Support</h5>
+        <p class="grey-text text-lighten-4" style="font-style:italic;">We're here to help you succeed in the classroom.</p>
+        <h6>Connect</h6>
+        <ul>
+          <li><a class="white-text" href="https://tips.uark.edu" target="_blank">TIPS site</a></li>
+          <li><a class="white-text" href="https://www.facebook.com/UARKTIPS/" target="_blank">TIPS Facebook</a></li>
+          <li><a class="white-text" href="https://twitter.com/tipsuark" target="_blank">TIPS Twitter</a></li>
+          <li><a class="white-text" href="#">TIPS Channel</a></li>
+        </ul>
+
+      </div>
+      <div class="col s12 m8 l4">
+        <h5 class="white-text">Fayetteville Location</h5>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.257107842879!2d-94.16148864906701!3d36.06283248000941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96ed7b26c4019%3A0x453997a3ded88db1!2s2%20E%20Center%20St%2C%20Fayetteville%2C%20AR%2072701!5e0!3m2!1sen!2sus!4v1571171793256!5m2!1sen!2sus" width="225" height="225" frameborder="0" style="border:0;" allowfullscreen=""></iframe></a></li>
+      </div>
+      <div class="col s12 m8 l4">
+        <h5 class="white-text">Rogers Location</h5>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.251910648517!2d-94.19077234895153!3d36.306197579955295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c911091f01355d%3A0x5add060b314183c8!2s3300%20S%20Market%20St%20%23402%2C%20Rogers%2C%20AR%2072758!5e0!3m2!1sen!2sus!4v1571173019545!5m2!1sen!2sus" width="225" height="225" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+ // CAROUSEL
+var carouselStarted = false; 
+var carouselStartTimer = setInterval(carouselStartTimer, 100);
+function carouselStartTimer() {
+if (document.getElementById("carouselStarter") && carouselStarted === false){
+	document.getElementById("carouselStarter").click();
+	carouselStarted = true;
+}
+if (!document.getElementById("carouselStarter") && carouselStarted === true){
+carouselStarted = false;
+}
+}
+
+function startCarousel() {
+    var carouselElems = document.querySelector('.carousel.carousel-slider');
+        var carouselInstance = M.Carousel.init(carouselElems, {
+            fullWidth: true
+        });
+    }
+var carouselTimer = setInterval(carouselTimer, 5000);	
+
+function carouselTimer() {
+  var elems = document.querySelector('.carousel.carousel-slider');
+  if (elems){
+  var moveRight = M.Carousel.getInstance(elems);
+  moveRight.next(1);
+  }
+ }
+
+//Parallax
+function initParallax() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);
+ }
+
+//tool tips
+document.addEventListener('DOMContentLoaded', function() {
+    var toolTipsElems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(toolTipsElems);
+  });
+ 
+//angular
+//get json data  
+var app = angular.module('myApp', ["ngRoute"]);
+app.controller('ltsCtrl', function($scope, $http) {
+  $http.get("lts.json").then(function (response) {
+      $scope.links = response.data.links;
+  });
+});
+//create routes for pages
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    templateUrl : "main.html"
+  })
+  .when("/workwithus", {
+    templateUrl : "workwithus.html"
+  })
+  .when("/services", {
+    templateUrl : "services.html"
+  })
+  .when("/research", {
+    templateUrl : "research.html"
+  });
+});
+</script>
+</body>
+</html>
