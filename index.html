@@ -11,13 +11,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Chilanka|Sedgwick+Ave|Sunshiney|Tillana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arimo|Sedgwick+Ave|Staatliches&display=swap" rel="stylesheet">
 <style>
+*{font-family:'Arimo', sans-serif;
+	}
   .backsplash {
   position: relative;
   text-align: center;
   color: white;
-  height: 800 px;
+  height: 500 px;
   }
   
   .centered {
@@ -25,6 +27,9 @@
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+  }
+	.allCaps{
+    font-family: 'Staatliches', cursive;
   }
   
   
@@ -34,15 +39,15 @@
 
 <div ng-app="myApp" ng-controller="ltsCtrl"> 
  
-  <nav class="nav-extended indigo darken-4">
+  <nav class="nav-extended" style="background-color: #edffd9;">
 	<div class="container">
     <div class="nav-wrapper">
-      <a href="#/!" class="brand-logo" style="font-size:3vw;">Learning Technology Support</a>
+      <a href="#/!" class="brand-logo" style="font-size:3vw; color:#1a237e;">Learning Technology Support</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu">Email</p></li>
-        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="479-555-5555">Phone</p></li>
-        <li><p class="waves-effect waves-light btn blue-grey darken-1 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu">Form</p></li>
+        <li><a href="mailto:tips@uark.edu" class="waves-effect waves-light btn teal accent-4 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu" style="color: #153243;  font-weight:bolder; ">Email</a></li>
+        <li><a href="tel:4795753800" class="waves-effect waves-light btn teal accent-4 tooltipped" data-position="bottom" data-tooltip="479-575-3800" style="color: #153243;  font-weight:bolder; ">Phone</a></li>
+        <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=xELHeRzmpU--iaPLVmqA0WSlPjxLxw9OhZizxPCJP8VUMlNCMTRESlM3TFZWS1Y0MzBST0tTMEZVUS4u" target="_blank" class="waves-effect waves-light btn teal accent-4 tooltipped" data-position="bottom" data-tooltip="tips@uark.edu" style="color: #153243; font-weight:bolder; ">Form</a></li>
       </ul>
       
     </div>
@@ -62,9 +67,9 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m8 l4">
-        <h5 class="white-text">Learning Technology Support</h5>
+        <h5 class="white-text allCaps">Learning Technology Support</h5>
         <p class="grey-text text-lighten-4" style="font-style:italic;">We're here to help you succeed in the classroom.</p>
-        <h6>Connect</h6>
+        <h6 class="allCaps">Connect</h6>
         <ul>
           <li><a class="white-text" href="https://tips.uark.edu" target="_blank">TIPS site</a></li>
           <li><a class="white-text" href="https://www.facebook.com/UARKTIPS/" target="_blank">TIPS Facebook</a></li>
@@ -74,11 +79,11 @@
 
       </div>
       <div class="col s12 m8 l4">
-        <h5 class="white-text">Fayetteville Location</h5>
+        <h5 class="white-text allCaps">Fayetteville Location</h5>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.257107842879!2d-94.16148864906701!3d36.06283248000941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c96ed7b26c4019%3A0x453997a3ded88db1!2s2%20E%20Center%20St%2C%20Fayetteville%2C%20AR%2072701!5e0!3m2!1sen!2sus!4v1571171793256!5m2!1sen!2sus" width="225" height="225" frameborder="0" style="border:0;" allowfullscreen=""></iframe></a></li>
       </div>
       <div class="col s12 m8 l4">
-        <h5 class="white-text">Rogers Location</h5>
+        <h5 class="white-text allCaps">Rogers Location</h5>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.251910648517!2d-94.19077234895153!3d36.306197579955295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c911091f01355d%3A0x5add060b314183c8!2s3300%20S%20Market%20St%20%23402%2C%20Rogers%2C%20AR%2072758!5e0!3m2!1sen!2sus!4v1571173019545!5m2!1sen!2sus" width="225" height="225" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         
       </div>
@@ -86,7 +91,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-    Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+    Made with <a class="" style="color: #72848E;" href="http://materializecss.com">Materialize</a>
     </div>
   </div>
 </footer>
